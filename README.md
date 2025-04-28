@@ -1,86 +1,70 @@
-# Java Web Application Deployment on AWS EC2
+# Java Web App Deployment with AWS CI/CD
 
-This project demonstrates how to set up a Java web application using Maven, deploy it on an AWS EC2 instance, and connect the codebase with GitHub.
+Welcome to this project combining Java web app development and AWS CI/CD tools!
 
----
+<br>
 
-## 🚀 Project Setup Steps
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Contact](#contact)
+- [Conclusion](#conclusion)
 
-### 1. Create AWS EC2 Instance
-- Launch a new EC2 instance (Amazon Linux 2 / Ubuntu preferred).
-- Open necessary ports (22 for SSH, 8080 or 80 for web app access).
-- SSH into your EC2 instance:
-  ```bash
-  ssh -i your-key.pem ec2-user@your-ec2-public-ip
-Install Java
-Install Java (e.g., OpenJDK 11):
+<br>
 
-bash
-Copy
-Edit
-sudo yum install java-11-openjdk -y
-java -version
-3. Install Maven
-Download and set up Maven:
+## Introduction
+This project is used for an introduction to creating and deploying a Java-based web app using AWS, especially their CI/CD tools.
 
-bash
-Copy
-Edit
-wget https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
-sudo tar -xzf apache-maven-3.5.2-bin.tar.gz -C /opt
-echo "export PATH=/opt/apache-maven-3.5.2/bin:$PATH" >> ~/.bashrc
-source ~/.bashrc
-mvn -version
-4. Clone the GitHub Repository
-Connect your EC2 instance to your GitHub repository:
+The deployment pipeline I'm building around the Java web app in this repository is invisible to the end-user, but makes a big impact by automating the software release processes.
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
-5. Build the Java Web Application
-Use Maven to build the project:
+- I'm doing this project to learn more about CI/CD and get hands on experience in automating the flow from developing code to deployed web app. 
+- This fits into my career goals because I want to become a DevOps engineer this year!
 
-bash
-Copy
-Edit
-mvn clean install
-This generates a .war or .jar file inside the target/ directory.
+<br>
 
-6. Run the Application
-If it's a .jar file:
+## Technologies
+Here’s what I’m using for this project:
 
-bash
-Copy
-Edit
-java -jar target/your-app-name.jar
-If it's a .war file, you can deploy it to a Tomcat server.
+- **Amazon EC2**: I'm developing my web app on Amazon EC2 virtual servers, so that software development and deployment happens entirely on the cloud.
+- Key pairs, SSH connections, Git, Maven and Java.
+- **VSCode**: For my IDE, I chose Visual Studio Code. It connects directly to my development EC2 instance, making it easy to edit code and manage files in the cloud.
+- **GitHub**: All my web app code is stored and versioned in this GitHub repository.
+- **[COMING SOON] AWS CodeArtifact**: Once it's rolled out, CodeArtifact will store my artifacts and dependencies, which is great for high availability and speeding up my project's build process.
+- **[COMING SOON] AWS CodeBuild**: Once it's rolled out, CodeBuild will take over my build process. It'll compile the source code, run tests, and produce ready-to-deploy software packages automatically.
+- **[COMING SOON] AWS CodeDeploy**: Once it's rolled out, CodeDeploy will automate my deployment process across EC2 instances.
+- **[COMING SOON] AWS CodePipeline**: Once it's rolled out, CodePipeline will automate the entire process from GitHub to CodeDeploy, integrating build, test, and deployment steps into one efficient workflow.
 
-📂 Project Structure
-css
-Copy
-Edit
-.
-├── src
-│   └── main
-│       ├── java
-│       └── resources
-├── pom.xml
-└── README.md
-🔗 GitHub Repository
-Your GitHub Repo Link Here
 
-🛡️ Notes
-Make sure your EC2 security group allows access to the required ports (e.g., 8080 for web servers).
+<br>
 
-Always protect your private keys and credentials.
+## Setup
+To get this project up and running on your local machine, follow these steps:
 
-Monitor your EC2 instance usage to avoid unnecessary charges.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/nextwork-web-project.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd nextwork-web-project
+    ```
+3. Install dependencies:
+    ```bash
+    mvn install
+    ```
 
-✨ Future Improvements
-Setup CI/CD pipeline (GitHub Actions, Jenkins)
+<br>
 
-Use Docker containers
+## Contact
+If you have any questions or comments about the my CI/CD project, please contact:
+Natasha - [hrushikesh.1804@gmail.com]
 
-Add HTTPS (SSL Certificate)
+- [LinkedIn](https://www.linkedin.com/in/hrushikesh-kadudula/)
+
+<br>
+
+## Conclusion
+Thank you for exploring this project! I'll continue to build this pipeline and apply my learnings to future projects.
+
+A big shoutout to **[NextWork](https://learn.nextwork.org/app)** for their project guide and support. [You can get started with this DevOps series project too by clicking here.](https://learn.nextwork.org/projects/aws-devops-vscode?track=high)
